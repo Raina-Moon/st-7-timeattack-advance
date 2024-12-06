@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function TodoList({ todos }) {
   const navigate = useNavigate();
@@ -14,9 +14,9 @@ export default function TodoList({ todos }) {
           }}
         >
           <h3>{todo.title}</h3>
-          <button onClick={() => navigate(`/detail/${todo.id}`)}>
+          <Link to={`/detail/${todo.id}`}>
             내용보기
-          </button>
+          </Link>
         </li>
       ))}
     </ul>
